@@ -1,10 +1,10 @@
 REM ======================================================
 REM Author: genhen
-color B
-@echo off
-title PDF RENAMER USING CSV
-mode con: cols=47 lines=20
-setlocal EnableDelayedExpansion
+COLOR B
+@ECHO off
+TITLE PDF RENAMER USING CSV
+MODE con: cols=47 lines=20
+SETLOCAL EnableDelayedExpansion
 REM ======================================================
 
 REM ======================================================
