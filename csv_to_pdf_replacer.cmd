@@ -1,5 +1,5 @@
 REM ======================================================
-rem Author: genhen
+REM Author: genhen
 color B
 @echo off
 title PDF RENAMER USING CSV
@@ -8,24 +8,24 @@ setlocal EnableDelayedExpansion
 REM ======================================================
 
 REM ======================================================
-rem Ensure that all the files are in the same
-rem folder/directory
+REM Ensure that all the files are in the same
+REM folder/directory
 REM ======================================================
-echo Have you placed all the .csv and .pdf files in
-echo the same folder as this .cmd file? If not,
-echo quit and restart
-pause
+ECHO Have you placed all the .csv and .pdf files in
+ECHO the same folder as this .cmd file? If not,
+ECHO quit and restart
+PAUSE
 
 REM ======================================================
-rem First we find the .csv file and save path
-rem Name the variable CSV_LOC
+REM First we find the .csv file and save path
+REM Name the variable CSV_LOC
 REM ======================================================
-For /R . %%G IN (*.csv) do SET CSV_LOC=%%G
-cls
+FOR /R . %%G IN (*.csv) do SET CSV_LOC=%%G
+CLS
 
 REM ======================================================
-rem Then we use each line in the CSV file to get
-rem the .pdf files and rename them
+REM Then we use each line in the CSV file to get
+REM the .pdf files and rename them
 REM ======================================================
 REM %%L in for loop stands for lines (string, not line
 REM     number) in csv file
@@ -42,9 +42,9 @@ FOR /F "usebackq skip=1 tokens=* delims=," %%L IN ("%CSV_LOC%") DO (
 			SET "ORIGINAL_NAME=%%N.pdf"
 			SET "NAME_REPLACE=%%B_%%C_!ORIGINAL_NAME!"
 
-			rem ACTUALLY DOING THE RENAMING HERE
+			REM ACTUALLY DOING THE RENAMING HERE
 			REN "!ORIGINAL_NAME!" "!NAME_REPLACE!"
 		)
 	)
 )
-exit
+EXIT
